@@ -1,11 +1,14 @@
 // index.tsx
-import React, { useEffect, useRef } from "react";
 import LeftSide from "@/components/LeftSide";
 import Navbar from "@/components/Navbar";
 import RightSide from "@/components/RightSide";
 import Banner from "@/components/Banner";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Archive from "@/components/Archive";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -44,24 +47,6 @@ if (typeof Node === "function" && Node.prototype) {
 }
 
 export default function Home() {
-  const mainContentRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = (e) => {
-      if (e.key === "ArrowDown") {
-        mainContentRef.current.scrollTop += 100;
-      } else if (e.key === "ArrowUp") {
-        mainContentRef.current.scrollTop -= 100;
-      }
-    };
-
-    window.addEventListener("keydown", handleScroll);
-
-    return () => {
-      window.removeEventListener("keydown", handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <Head>
@@ -71,9 +56,9 @@ export default function Home() {
         <link rel="icon" href="/logo.ico" />
       </Head>
       <main
-        className="w-full h-screen font-bodyFont bg-bodyColor text-textLight overflow-x-hidden overflow-y-scroll"
-        ref={mainContentRef}
-        style={{ scrollBehavior: "smooth" }}
+        className="w-full h-screen font-bodyFont bg-bodyColor text-textLight overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-textDark/20 scrollbar-thumb-textDark/60"
+        // ref={mainContentRef}
+        // style={{ scrollBehavior: "smooth" }}
       >
         <Navbar />
         <div className="w-full xl:flex items-center gap-20 justify-between relative">
@@ -89,11 +74,10 @@ export default function Home() {
             <Banner />
             <About />
             <Experience />
-
-            {/* Projects */}
-            {/* Archive */}
-            {/* Contact */}
-            {/* Footer */}
+            <Projects />
+            <Archive />
+            <Contact />
+            <Footer />
           </div>
           <motion.div
             initial={{ opacity: 0 }}
