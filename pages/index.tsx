@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-//Handles Remove NodeChild issue breaking the Experience section
+Handles Remove NodeChild issue breaking the Experience section
 
 if (typeof Node === "function" && Node.prototype) {
   const originalRemoveChild = Node.prototype.removeChild;
