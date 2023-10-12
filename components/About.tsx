@@ -16,7 +16,7 @@ const About = () => {
             Hello! My name is Daniel Oriazowan and I enjoy creating things that
             live on the internet. My interest in web development started back in
             2008 when I decided to build a website that provide motivations from
-            some of the world's greatest speakers. Turns out, I learnt a lot of
+            some of the worlds greatest speakers. Turns out, I learnt a lot of
             HTML, CSS and JavaScript working on it.
           </p>
           <p>
